@@ -80,17 +80,6 @@ class Commands(commands.Cog):
     @commands.command(aliases=["ap"])
     async def autopoll(self, ctx, spid, rnge, footer=""):
         await ctx.message.delete()
-
-        print(spid)
-        print(rnge)
-
-        if spid is None:
-            await generate_user_error_embed(ctx, "Missing SpreadSheet ID")
-            return
-        if rnge is None:
-            await generate_user_error_embed(ctx, "Missing Cell Range")
-            return
-
         async with ctx.typing():
             # If modifying these scopes, delete the file token.pickle.
             SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
@@ -139,6 +128,7 @@ class Commands(commands.Cog):
             return
 
         await send_traceback(ctx, error)
+
 
 def setup(bot):
     bot.add_cog(Commands(bot))

@@ -6,9 +6,11 @@ from datetime import datetime
 import discord
 from discord.ext import commands
 
+
 async def generate_user_error_embed(ctx, message):
     embed = discord.Embed(title="**Error**", description=message, colour=0xA50B06)
     await ctx.send(embed=embed)
+
 
 async def send_traceback(ctx, exception):
     tb_lines = traceback.format_exception(type(exception), exception, exception.__traceback__, 4)
@@ -62,7 +64,6 @@ class Bot(commands.Bot):
 
     async def on_ready(self):
         print(f"Name:\t{super().user.name}\nID:\t{super().user.id}")
-        print(super().get_user(id=188341441603305472))
 
     async def on_command_error(self, ctx, exception):
         # This prevents any commands with local handlers being handled here
