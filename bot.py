@@ -6,6 +6,9 @@ from datetime import datetime
 import discord
 from discord.ext import commands
 
+async def generate_user_error_embed(ctx, message):
+    embed = discord.Embed(title="**Error**", description=message, colour=0xA50B06)
+    await ctx.send(embed=embed)
 
 async def send_traceback(ctx, exception):
     tb_lines = traceback.format_exception(type(exception), exception, exception.__traceback__, 4)

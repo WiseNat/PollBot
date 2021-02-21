@@ -1,6 +1,7 @@
 # Our Files
 token.secret
 credentials.json
+token.pickle
 /.idea
 logs/
 
