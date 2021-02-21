@@ -19,7 +19,8 @@ Google Client Library | https://developers.google.com/sheets/api/quickstart/pyth
 3. Click on the application you just made
 4. Go to the Bot tab on the left
 5. Click "Add Bot" and agree to make the bot
-6. Under the bots name click on "Copy" to copy the bots Token
+6. Scroll down to "Privileged Gateway Intents" and turn on the "Server Members Intent"
+7. Scroll back up and under where you input the bots username click the "Copy" button to copy the bots Token
 
 
 ### Github Repository
