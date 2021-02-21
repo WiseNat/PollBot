@@ -47,7 +47,7 @@ async def help(ctx, *args):
     help_message = await ctx.send(embed=main_embed)
     await help_message.add_reaction("<:cross:671116183780720670>")
 
-    def check(reaction, user, *args):
+    def check(reaction, user):
         return str(reaction) == "<:cross:671116183780720670>" and \
                str(reaction.message) == str(help_message) and \
                user != reaction.message.author
